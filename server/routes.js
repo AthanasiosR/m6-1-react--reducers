@@ -20,7 +20,7 @@ for (let r = 0; r < row.length; r++) {
 // ----------------------------------
 
 router.get("/api/seat-availability", async (req, res) => {
-  await delay(Math.random() * 3000);
+  await delay(Math.random() * 1000);
 
   return res.json({
     seats: seats,
@@ -34,7 +34,7 @@ let lastBookingAttemptSucceeded = false;
 router.post("/api/book-seat", async (req, res) => {
   const { seatId, creditCard, expiration } = req.body;
 
-  await delay(Math.random() * 3000);
+  await delay(Math.random() * 1000);
 
   if (seats[seatId].isBooked) {
     return res.status(400).json({
